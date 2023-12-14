@@ -1,7 +1,6 @@
 FROM openjdk:11-jre
 
 RUN curl https://dlcdn.apache.org/flink/flink-1.16.3/flink-1.16.3-bin-scala_2.12.tgz -O && \
-    mkdir /opt/flink && \
     tar -zxf flink-1.16.3-bin-scala_2.12.tgz -C /opt && \
     rm -f flink-1.16.3-bin-scala_2.12.tgz
 
