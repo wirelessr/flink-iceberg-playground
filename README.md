@@ -1,5 +1,7 @@
 # Getting Started with Flink SQL and Apache Iceberg
 
+The full story is published on [Medium blog](https://lazypro.medium.com/71b96817e3c3).
+
 This repo was inspired by [this article](https://www.dremio.com/blog/getting-started-with-flink-sql-and-apache-iceberg/) and fixes many fatal bugs.
 
 The entire playground is completely free, and at its core are the following three components.
