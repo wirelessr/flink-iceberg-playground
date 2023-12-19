@@ -12,7 +12,7 @@ The entire playground is completely free, and at its core are the following thre
 Because all the URLs of the dependency packages are written in the `sql-client` self-contained image, if you run into a situation where you can't build an image, you have to change the corresponding path.
 
 Alternatively, you can use an already created docker image.
-> docker push wirelessr/flink-iceberg:1.16.3
+> docker pull wirelessr/flink-iceberg:1.16.3
 
 ## Playing Steps
 
