@@ -16,9 +16,9 @@ Alternatively, you can use an already created docker image.
 
 ## Playing Steps
 
-1. Directly activate the entire environment: `docker-compose up -d`.
-2. Enter the container: `docker-compose exec sql-client bash`.
-3. Work with Flink SQL: `./bin/sql-client.sh embedded`.
+0. Build the container: `docker compose build sql-client`
+1. Directly activate the entire environment: `docker compose up -d`.
+2. Launch the SQL Client `docker compose exec sql-client bash -c "./bin/sql-client.sh"`
 4. Create and use the DynamoDB Catalog.
 
 ```sql
@@ -51,3 +51,14 @@ CREATE TABLE spotify (songid BIGINT, artist STRING, rating BIGINT);
 INSERT INTO spotify VALUES (2, 'drake', 3);
 SELECT * FROM spotify;
 ```
+
+## Viewing the Iceberg data in MinIO
+
+1. Go to http://localhost:9001/ and login (`admin` / `password`)
+2. Inspect the `warehouse` bucket, observe the Parquet files under `data` and JSON files under `metadata`
+
+## Viewing the catalog data in DynamoDB
+
+1. Install [dynamodb-admin](https://github.com/aaronshaf/dynamodb-admin): `npm install -g dynamodb-admin`
+2. Launch GUI `DYNAMO_ENDPOINT=http://localhost:8000 dynamodb-admin`
+3. Go to http://0.0.0.0:8001/ and inspect the values held under `iceberg-catalog`
